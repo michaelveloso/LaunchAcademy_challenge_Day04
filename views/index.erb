@@ -6,13 +6,13 @@
   </head>
 
   <body>
+    <h1>Articles <a href="/articles/new">submitted</a></h1>
     <ul>
-      <% @article_info_lines.each do |line| %>
-      <% line_info = parse_line(line) %>
-      <%= line_info["article_title"] %>
+      <% @articles.each do |article| %>
       <ul>
-        <li><a href="http://<%= line_info['article_url'] %>" target="_blank"><%= line_info["article_title"] %></a></li>
-        <li><%= line_info["article_description"] %></li>
+        <li><%= article.title %></li>
+        <li><a href="http://<%= article.url %>" target="_blank"><%= article.url %></a></li>
+        <li><%= article.description %></li>
       </ul>
       <% end %>
     </ul>
