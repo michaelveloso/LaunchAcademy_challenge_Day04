@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Articles</title>
+    <link rel="stylesheet" href="home.css">
+  </head>
+
+  <body>
+    <ul>
+      <% @article_info_lines.each do |line| %>
+      <% line_info = parse_line(line) %>
+      <%= line_info["article_title"] %>
+      <ul>
+        <li><a href="http://<%= line_info['article_url'] %>" target="_blank"><%= line_info["article_title"] %></a></li>
+        <li><%= line_info["article_description"] %></li>
+      </ul>
+      <% end %>
+    </ul>
+  </body>
+</html>
